@@ -1,5 +1,6 @@
-// mpicc -o ola_mpi ola_mpi.c
-// mpiexec -n 4 ./ola_mpi
+// mpicc -o ola_mpi ola_mpi.c -lm
+// mpiexec -np 4 ./ola_mpi
+// mpirun -np 4 ./ola_mpi
 
 #include <mpi.h>
 #include <stdio.h>
