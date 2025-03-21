@@ -14,6 +14,14 @@ int main(int argc, char** argv) {
 
     int n = 10;
     int n_per_proc = n / size;
+    
+    if (n % size != 0) {
+        if (rank == 0) {
+            printf("O número de processos deve ser divisível por %d\n", n);
+        }
+        MPI_Finalize();
+        return 0;
+    }
 
     int A[n];
     int B[n];
